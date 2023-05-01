@@ -1,11 +1,14 @@
 {
    "background": {
-      "scripts": [ "js/config.js", "js/fn.js", "js/storage-local.js", "background.js" ]
+      "scripts": [ "js/config.js", "js/fn.js", "js/storage-local.js", "background.js" ],
+      "persistent": false
    },
    "content_scripts": [
       {
-        "matches": ["https://en.wikipedia.org/wiki/*"],
-        "js": ["js/content.js"]
+        "matches": ["<all_urls>"],
+        "run_at": "document_idle",
+        "js": ["progress/script.js"],
+        "css": ["progress/style.css"]
       }
    ],
    "browser_action": {
@@ -28,7 +31,7 @@
    "name": "Odin Tracker",
    "offline_enabled": true,
    "optional_permissions": [ "\u003Call_urls>" ],
-   "permissions": [ "tabs", "idle", "storage", "unlimitedStorage" ],
+   "permissions": [ "tabs", "activeTab", "declarativeContent", "idle", "storage", "unlimitedStorage" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.4.5"
+   "version": "2.0.0"
 }

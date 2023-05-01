@@ -1,0 +1,12 @@
+#chrome-extension-progress {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 10px;
+    background-color: #8400ff;
+    border-radius: 1px;
+    z-index: 99999;
+    box-shadow: 2px 2px 5px 0 rgba(24, 144, 255, .2);
+  }
